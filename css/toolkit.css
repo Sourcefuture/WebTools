@@ -317,24 +317,6 @@ a {
     }
 }
 
-.about-content>p {
-    text-indent: 2em;
-    line-height: 25px;
-    margin-bottom: 10px;
-    color: #2d2d2d;
-}
-.about-content>p>a {
-    color: #3c3e3f;
-    text-decoration: none!important;
-    font-weight: bold;
-}
-.about-content>p>a:hover {
-    color: #636264;
-    text-decoration: none!important;
-    font-weight: bold;
-}
-
-
 /* 页脚区域 */
 .footer {
     margin-top: 30px;

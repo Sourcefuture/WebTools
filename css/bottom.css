@@ -8,7 +8,9 @@
     border: 1px solid #ccc;
     padding: 20px;
     z-index: 999;
-    animation: fadeInOut 0.3s ease; /* 添加动画效果 */
+    text-decoration: none;
+    animation: fadeInOut 0.3s ease;
+    /* 添加动画效果 */
 }
 
 #openButton {
@@ -18,19 +20,104 @@
     border: none;
 }
 
-#closeButton {
-    position: absolute; 
+.closeButton {
+    position: absolute;
     bottom: 0px;
     right: 0px;
-    background-color: #000; 
+    background-color: #000;
     color: #fff;
-    border: 1px solid #000; 
+    border: 1px solid #000;
     padding: 5px;
     cursor: pointer;
     /* border-radius: 50%; */
 }
 
+/* 弹出式窗口的容器 */
+.popup {
+    position: fixed;
+    /* 固定定位 */
+    top: 50%;
+    /* 垂直居中 */
+    left: 50%;
+    /* 水平居中 */
+    transform: translate(-50%, -50%);
+    /* 精确居中 */
+    width: 600px;
+    /* 宽度 */
+    padding: 20px;
+    /* 内边距 */
+    background-color: white;
+    /* 背景色 */
+    border-radius: 15px;
+    /* 圆角 */
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    /* 半透明边框 */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    /* 阴影效果 */
+    z-index: 1000;
+    /* 确保在最上层 */
+}
+
+/* 右下角的关闭按钮 */
+.popup .close-btn {
+    bottom: 10px;
+    /* 靠近底部 */
+    right: 15px;
+    /* 靠近右侧 */
+    --tw-bg-opacity: 1;
+    --tw-text-opacity: 1;
+    background-color: rgb(13 13 13/var(--tw-bg-opacity));
+    color: rgb(255 255 255/var(--tw-text-opacity));
+    align-items: center;
+    border-color: transparent;
+    border-radius: 9999px;
+    border-width: 1px;
+    display: inline-flex;
+    flex-shrink: 0;
+    font-size: .875rem;
+    font-weight: 500;
+    justify-content: center;
+    line-height: 1.25rem;
+    min-height: 38px;
+    padding: 0.5rem 0.875rem;
+    pointer-events: auto;
+}
+
+.popup .close-btn:hover {
+    background-color: #333333;
+    /* 悬停时背景色 */
+}
+
+.popup .close-btn:focus {
+    outline: none;
+    /* 去除焦点时的默认边框 */
+}
+
+.about-content>p {
+    text-indent: 2em;
+    line-height: 25px;
+    margin-bottom: 10px;
+    color: #2d2d2d;
+}
+
+.about-content>p>a {
+    color: #3c3e3f;
+    text-decoration: none !important;
+    font-weight: bold;
+}
+
+.about-content>p>a:hover {
+    color: #636264;
+    text-decoration: none !important;
+    font-weight: bold;
+}
+
 @keyframes fadeInOut {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }

@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Source 百宝箱</title>
     <!-- 导入阿里的图标样式文件 -->
-    <link rel="icon" type="image/x-icon" href=""/>
+    <link rel="icon" type="image/x-icon" href="" />
     <link rel="stylesheet" href="iconfont/iconfont.css">
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/toolkit.css">
@@ -83,7 +83,8 @@
                             <i class="menu-item-icon iconfont icon-a-08-shezhi"></i>
                             <span id="option_6">About</span>
                             <button id="openButton"></button>
-                            <div class="floating-window" id="floatingWindow" style="text-decoration: none">
+
+                            <!-- <div class="floating-window" id="floatingWindow" style="text-decoration: none">
                                 <button id="closeButton">关闭</button>
 
                                 <div class="about-content">
@@ -96,7 +97,29 @@
                                         请注意，开源不代表可以滥用，转载或使用这些源代码时，请务必保留原始的版权信息！
                                         这是一个程序员最基本的修养，也是对原作者最起码的尊重。</p>
                                 </div>
+                            </div> -->
+
+                            <!-- <div class="floating-window" id="floatingWindow">
+                                <button id="closeButton">关闭</button>
+
+                                <div class="about-content">
+                                    <p>文字内容</p>
+                                </div>
+                            </div> -->
+                            <div class="floating-window" id="floatingWindow" style="text-decoration: none">
+                                <div class="popup about-content">
+                                    <button class="close-btn closeButton" id="closeButton" >关闭</button>
+                                    <p>本站用来陈列一些新鲜、好玩的 Html 作品。</p>
+
+                                    <p>本站样式参考 <a href="https://lab.mkblog.cn/" target="_blank">孟坤 Web 实验室</a> 和
+                                        <a href="https://github.com/imsyy/lab" target="_blank">無名 Web 实验室</a> 并做出了些许修改。
+                                    </p>
+                                    <p> 此「 工具箱 」中的大部分作品是开源的，即使没有开源，您也可以通过查看源代码以进行查阅。
+                                        请注意，开源不代表可以滥用，转载或使用这些源代码时，请务必保留原始的版权信息！
+                                        这是一个程序员最基本的修养，也是对原作者最起码的尊重。</p>
+                                </div>
                             </div>
+
                         </label>
                     </div>
                 </div>
@@ -729,48 +752,7 @@
     <script src="js/jquery-3.4.1.min.js"></script>
     <script src="bootstrap/js/bootstrap.bundle.js"></script>
     <script src="js/bottom.js"></script>
-    <script>
-        $(function () {
-            $('#option_0').trigger('click');
-        })
-
-        function show_div(curthis) {
-            var id = curthis.attr('id');
-            $('#div_' + id).siblings().removeClass("d-flex").addClass('d-none');
-            $('#div_' + id).removeClass('d-none').addClass('d-flex');
-        }
-
-        $('#option_0').click(function () {
-            show_div($(this));
-        })
-
-        $('#option_1').click(function () {
-            show_div($(this));
-        })
-
-        $('#option_2').click(function () {
-            show_div($(this));
-        })
-        $('#option_3').click(function () {
-            show_div($(this));
-        })
-        $('#option_4').click(function () {
-            show_div($(this));
-        })
-        $('#option_5').click(function () {
-            show_div($(this));
-        })
-        $('#option_6').click(function () {
-            show_div($(this));
-        })
-        $('#option_7').click(function () {
-            show_div($(this));
-        })
-        $('#option_8').click(function () {
-            show_div($(this));
-        })
-    </script>
-
+    <script src="js/script.js"></script>
 </body>
 
 </html>
