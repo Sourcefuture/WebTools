@@ -1,784 +1,275 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="zh">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Source 百宝箱</title>
-    <!-- 导入阿里的图标样式文件 -->
-    <link rel="icon" type="image/x-icon" href="" />
-    <link rel="stylesheet" href="iconfont/iconfont.css">
-    <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="css/toolkit.css">
-    <link rel="stylesheet" href="css/bottom.css">
-    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
-    <link rel="stylesheet" href="fontawesome/css/all.css">
-    <!--    <script src="iconfont.js"></script>-->
-    <style>
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Source 百宝箱">
+  <link rel="icon" type="image/x-icon" href="./favicon.ico">
+  <title>Source | 百宝箱</title>
+  <script src="./assets/js/lucide.min.js"></script>
+  <link rel="stylesheet" href="./assets/css/card.css">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="./assets/css/home.css">
 </head>
 
 <body>
-    <div class="d-flex flex-row w-100">
-        <div class="d-flex flex-row">
-            <div class="menu-box">
-                <!-- 展示与隐藏侧边栏 开始-->
-                <input type="checkbox" id="menu-btn">
-                <label for="menu-btn"><i class="iconfont icon-yemianfanhui"></i></label>
-                <!-- 展示与隐藏侧边栏 结束-->
-                <div class="menu">
-                    <!-- 侧边栏的标题 开始-->
-                    <div class="menu-title">
-                        <span id="option_0" style="font-size: 30px;">百宝箱</span>
-                    </div>
-                    <!-- 侧边栏的标题 结束-->
+  <!-- 左侧导航栏 -->
+  <div class="sidebar">
+    <h2>Source 百宝箱</h2>
+    <div class="nav-item active" data-target="div_option_0">🏠 首页</div>
+    <div class="nav-item" data-target="div_option_1">🧰 小工具</div>
+    <div class="nav-item" data-target="div_option_2">🎮 游戏</div>
+    <div class="nav-item" data-target="div_option_3">🗞️ 杂项</div>
+    <div class="nav-item" id="aboutBtn">💡 关于</div>
+  </div>
 
-                    <!-- 每一项导航 -->
-                    <div class="menu-item">
-                        <input type="checkbox" id="menu-item1">
-                        <label for="menu-item1">
-                            <i class="fas fa-tools"></i>
-                            <span>工具</span>
-                            <i class="menu-item-last iconfont icon-down"></i>
-                        </label>
-                        <div class="menu-content">
-                            <span id="option_1">小工具</span>
-                            <span id="option_2">文本相关</span>
-                            <span id="option_3">文件处理</span>
-                        </div>
-                    </div>
+  <!-- 右侧内容区域 -->
+  <div class="content">
+    <div id="div_option_0" class="content-section active">
+      <!-- 简约主页面 -->
+      <div class="home-intro-simple">
+        <h1>欢迎来到 Source 百宝箱</h1>
+        <p>本网站是纯前端静态网站，是一个收录日常工具与快捷资源的平台，致力于让工作与学习更加高效。</p>
+        <p>无论是简单的文件处理，还是有趣的网页游戏，你都可以在这里轻松实现。</p>
+        <p>探索百宝箱，发现更多便利与可能。</p>
 
-                    <div class="menu-item">
-                        <input type="checkbox" id="menu-item2">
-                        <label for="menu-item2">
-                            <i class="fas fa-chess"></i>
-                            <span>游戏</span>
-                            <i class="menu-item-last iconfont icon-down"></i>
-                        </label>
-                        <div class="menu-content">
-                            <span id="option_4">在线游戏</span>
-                            <span id="option_5">游戏工具</span>
-                        </div>
-                    </div>
-
-                    <div class="menu-item">
-                        <input type="checkbox" id="menu-item3">
-                        <label for="menu-item3">
-                            <i class="menu-item-icon iconfont icon-a-04-zixunfabu"></i>
-                            <span id="option_6">其他</span>
-                            <!-- <i class="menu-item-last iconfont icon-down"></i> -->
-                        </label>
-                        <!-- <div class="menu-content">
-                            <span id="option_6">option1</span>
-                            <span id="option_7">option2</span>
-                            <span id="option_8">option3</span>
-                        </div> -->
-                    </div>
-
-                    <div class="set-line"></div>
-
-                    <div class="menu-item">
-                        <label>
-                            <i class="menu-item-icon iconfont icon-a-08-shezhi"></i>
-                            <span id="option_6">About</span>
-                            <button id="openButton"></button>
-
-                            <!-- <div class="floating-window" id="floatingWindow" style="text-decoration: none">
-                                <button id="closeButton">关闭</button>
-
-                                <div class="about-content">
-                                    <p>本站用来陈列一些新鲜、好玩的 Html 作品。</p>
-
-                                    <p>本站样式参考 <a href="http://lab.mkblog.cn/" target="_blank">孟坤 Web 实验室</a> 和
-                                        <a href="https://github.com/imsyy/lab" target="_blank">無名 Web 实验室</a> 并做出了些许修改。
-                                    </p>
-                                    <p> 此「 工具箱 」中的大部分作品是开源的，即使没有开源，您也可以通过查看源代码以进行查阅。
-                                        请注意，开源不代表可以滥用，转载或使用这些源代码时，请务必保留原始的版权信息！
-                                        这是一个程序员最基本的修养，也是对原作者最起码的尊重。</p>
-                                </div>
-                            </div> -->
-
-                            <!-- <div class="floating-window" id="floatingWindow">
-                                <button id="closeButton">关闭</button>
-
-                                <div class="about-content">
-                                    <p>文字内容</p>
-                                </div>
-                            </div> -->
-                            <div class="floating-window" id="floatingWindow" style="text-decoration: none">
-                                <div class="popup about-content">
-                                    <button class="close-btn closeButton" id="closeButton" >关闭</button>
-                                    <p>本站用来陈列一些新鲜、好玩的 Html 作品。</p>
-
-                                    <p>本站样式参考 <a href="https://lab.mkblog.cn/" target="_blank">孟坤 Web 实验室</a> 和
-                                        <a href="https://github.com/imsyy/lab" target="_blank">無名 Web 实验室</a> 并做出了些许修改。
-                                    </p>
-                                    <p> 此「 工具箱 」中的大部分作品是开源的，即使没有开源，您也可以通过查看源代码以进行查阅。
-                                        请注意，开源不代表可以滥用，转载或使用这些源代码时，请务必保留原始的版权信息！
-                                        这是一个程序员最基本的修养，也是对原作者最起码的尊重。</p>
-                                </div>
-                            </div>
-
-                        </label>
-                    </div>
-                </div>
-            </div>
+        <!-- 核心理念或亮点 -->
+        <div class="home-features">
+          <div class="feature">
+            <i data-lucide="check-circle" class="feature-icon"></i>
+            <h3>高效</h3>
+            <p>集中管理工具，提高操作效率</p>
+          </div>
+          <div class="feature">
+            <i data-lucide="layers" class="feature-icon"></i>
+            <h3>整洁</h3>
+            <p>清晰分类，让工具与资源一目了然</p>
+          </div>
+          <div class="feature">
+            <i data-lucide="thumbs-up" class="feature-icon"></i>
+            <h3>便捷</h3>
+            <p>一键访问常用功能，轻松完成任务</p>
+          </div>
         </div>
-
-
-        <div class="d-flex flex-column align-items-center w-100" style="background-color: #e7e7e7;">
-            <div class="d-none w-100" id="div_option_0">
-                <div class="container">
-                    <section class="section">
-                        <a name="product"></a>
-
-                        <h3 class="mk-sub-title">
-                            <span>Tools</span>
-                            <span>/</span>
-                            小工具
-                        </h3>
-                        <p class="mk-title-describe">各种稀奇古怪的功能</p>
-                        <div class="mk-item-box">
-                            <div class="mk-item">
-                                <a href="tools/tool/smallTool/screentest" target="_blank">
-                                    <article class="mk-color-item color2">
-                                        <div class="item-logo">
-                                            <i class="fas fa-desktop" aria-hidden="true"></i>
-                                        </div>
-                                        <h3>屏幕测试</h3>
-                                        <p>你的屏幕是否有缺陷呢</p>
-                                        <i class="light"></i>
-                                    </article>
-                                </a>
-                            </div> <!-- mk-item -->
-
-                            <div class="mk-item">
-                                <a href="tools/tool/smallTool/color" target="_blank">
-                                    <article class="mk-color-item color5">
-                                        <div class="item-logo">
-                                            <i class="fas fa-rainbow" aria-hidden="true"></i>
-                                        </div>
-                                        <h3>html颜色代码</h3>
-                                        <p>在线转换RGB代码</p>
-                                        <i class="light"></i>
-                                    </article>
-                                </a>
-                            </div> <!-- mk-item -->
-
-                            <div class="mk-item">
-                                <a href="tools/tool/smallTool/logoly" target="_blank">
-                                    <article class="mk-color-item color4">
-                                        <div class="item-logo">
-                                            <i class="fa fa-home" aria-hidden="true"></i>
-                                        </div>
-                                        <h3>Logo生成</h3>
-                                        <p>好看的LOGO生成器</p>
-                                        <i class="light"></i>
-                                    </article>
-                                </a>
-                            </div> <!-- mk-item -->
-
-                            <div class="mk-item">
-                                <a href="tools/tool/smallTool/whiteboard" target="_blank">
-                                    <article class="mk-color-item color3">
-                                        <div class="item-logo">
-                                            <i class="fa fa-chalkboard" aria-hidden="true"></i>
-                                        </div>
-                                        <h3>在线画板</h3>
-                                        <p>一个前端简易画板工具</p>
-                                        <i class="light"></i>
-                                    </article>
-                                </a>
-                            </div> <!-- mk-item -->
-
-                            <div class="mk-item">
-                                <a href="tools/tool/smallTool/get-UA/" target="_blank">
-                                    <article class="mk-color-item color5">
-                                        <div class="item-logo">
-                                            <i class="fa fa-user" aria-hidden="true"></i>
-                                        </div>
-                                        <h3>UA获取</h3>
-                                        <p>获取浏览器使用的用户代理</p>
-                                        <i class="light"></i>
-                                    </article>
-                                </a>
-                            </div> <!-- mk-item -->
-
-                            <div class="mk-item">
-                                <a href="tools/tool/text/emoji" target="_blank">
-                                    <article class="mk-color-item color1">
-                                        <div class="item-logo">
-                                            <i class="fas fa-grin-tongue-wink" aria-hidden="true"></i>
-                                        </div>
-                                        <h3>Emoji 大全</h3>
-                                        <p>非常全面的 Emoji 合集</p>
-                                        <i class="light"></i>
-                                    </article>
-                                </a>
-                            </div> <!-- mk-item -->
-
-                            <div class="mk-item">
-                                <a href="tools/tool/text/text-encoder" target="_blank">
-                                    <article class="mk-color-item color5">
-                                        <div class="item-logo">
-                                            <i class="fas fa-text-height" aria-hidden="true"></i>
-                                        </div>
-                                        <h3>编码解码</h3>
-                                        <p>文本编码解码工具合集</p>
-                                        <i class="light"></i>
-                                    </article>
-                                </a>
-                            </div> <!-- mk-item -->
-
-
-                            <div class="mk-item">
-                                <a href="tools/tool/text/qrcode" target="_blank">
-                                    <article class="mk-color-item color3">
-                                        <div class="item-logo">
-                                            <i class="fas fa-qrcode" aria-hidden="true"></i>
-                                        </div>
-                                        <h3>二维码生成</h3>
-                                        <p>根据文本生成二维码</p>
-                                        <i class="light"></i>
-                                    </article>
-                                </a>
-                            </div> <!-- mk-item -->
-
-                            <div class="mk-item">
-                                <a href="tools/tool/text/runcode" target="_blank">
-                                    <article class="mk-color-item color6">
-                                        <div class="item-logo">
-                                            <i class="fas fa-file-signature" aria-hidden="true"></i>
-                                        </div>
-                                        <h3>在线html</h3>
-                                        <p>实时html编写工具</p>
-                                        <i class="light"></i>
-                                    </article>
-                                </a>
-                            </div> <!-- mk-item -->
-
-                            <div class="mk-item">
-                                <a href="tools/tool/text/markdown" target="_blank">
-                                    <article class="mk-color-item color2">
-                                        <div class="item-logo">
-                                            <i class="fas fa-feather-alt" aria-hidden="true"></i>
-                                        </div>
-                                        <h3>Markdown</h3>
-                                        <p>Markdown编写工具</p>
-                                        <i class="light"></i>
-                                    </article>
-                                </a>
-                            </div> <!-- mk-item -->
-
-                            <div class="mk-item">
-                                <a href="tools/tool/text/totp-generator" target="_blank">
-                                    <article class="mk-color-item color1">
-                                        <div class="item-logo">
-                                            <i class="fas fa-id-badge" aria-hidden="true"></i>
-                                        </div>
-                                        <h3>TOTP</h3>
-                                        <p>在线TOTP解码工具</p>
-                                        <i class="light"></i>
-                                    </article>
-                                </a>
-                            </div> <!-- mk-item -->
-
-                            <div class="mk-item">
-                                <a href="tools/tool/file/unlock-music" target="_blank">
-                                    <article class="mk-color-item color4">
-                                        <div class="item-logo">
-                                            <i class="fas fa-compact-disc" aria-hidden="true"></i>
-                                        </div>
-                                        <h3>音乐解锁</h3>
-                                        <p>解锁平台专属音乐</p>
-                                        <i class="light"></i>
-                                    </article>
-                                </a>
-                            </div> <!-- mk-item -->
-
-
-                            <div class="mk-item">
-                                <a href="tools/tool/file/QR-code-decoder" target="_blank">
-                                    <article class="mk-color-item color1">
-                                        <div class="item-logo">
-                                            <i class="fas fa-qrcode" aria-hidden="true"></i>
-                                        </div>
-                                        <h3>二维码识别</h3>
-                                        <p>将二维码识别为文本</p>
-                                        <i class="light"></i>
-                                    </article>
-                                </a>
-                            </div> <!-- mk-item -->
-
-                            <div class="mk-item">
-                                <a href="tools/tool/file/compress-img" target="_blank">
-                                    <article class="mk-color-item color6">
-                                        <div class="item-logo">
-                                            <i class="fas fa-compress-alt" aria-hidden="true"></i>
-                                        </div>
-                                        <h3>图片压缩</h3>
-                                        <p>在线图片压缩工具</p>
-                                        <i class="light"></i>
-                                    </article>
-                                </a>
-                            </div> <!-- mk-item -->
-
-
-
-                        </div> <!-- mk-item-box -->
-                    </section>
-                </div>
-            </div>
-
-            <div class="d-none w-100" id="div_option_1">
-                <div class="container">
-                    <section class="section">
-                        <a name="product"></a>
-
-                        <h3 class="mk-sub-title">
-                            <span>Tools</span>
-                            <span>/</span>
-                            小工具
-                        </h3>
-                        <p class="mk-title-describe">各种稀奇古怪的功能</p>
-                        <div class="mk-item-box">
-                            <div class="mk-item">
-                                <a href="tools/tool/smallTool/screentest" target="_blank">
-                                    <article class="mk-color-item color2">
-                                        <div class="item-logo">
-                                            <i class="fas fa-desktop" aria-hidden="true"></i>
-                                        </div>
-                                        <h3>屏幕测试</h3>
-                                        <p>你的屏幕是否有缺陷呢</p>
-                                        <i class="light"></i>
-                                    </article>
-                                </a>
-                            </div> <!-- mk-item -->
-
-                            <div class="mk-item">
-                                <a href="tools/tool/smallTool/color" target="_blank">
-                                    <article class="mk-color-item color5">
-                                        <div class="item-logo">
-                                            <i class="fas fa-rainbow" aria-hidden="true"></i>
-                                        </div>
-                                        <h3>html颜色代码</h3>
-                                        <p>在线转换RGB代码</p>
-                                        <i class="light"></i>
-                                    </article>
-                                </a>
-                            </div> <!-- mk-item -->
-
-                            <div class="mk-item">
-                                <a href="tools/tool/smallTool/logoly" target="_blank">
-                                    <article class="mk-color-item color4">
-                                        <div class="item-logo">
-                                            <i class="fa fa-home" aria-hidden="true"></i>
-                                        </div>
-                                        <h3>Logo生成</h3>
-                                        <p>好看的LOGO生成器</p>
-                                        <i class="light"></i>
-                                    </article>
-                                </a>
-                            </div> <!-- mk-item -->
-
-                            <div class="mk-item">
-                                <a href="tools/tool/smallTool/whiteboard" target="_blank">
-                                    <article class="mk-color-item color3">
-                                        <div class="item-logo">
-                                            <i class="fa fa-chalkboard" aria-hidden="true"></i>
-                                        </div>
-                                        <h3>在线画板</h3>
-                                        <p>一个前端简易画板工具</p>
-                                        <i class="light"></i>
-                                    </article>
-                                </a>
-                            </div> <!-- mk-item -->
-
-                            <div class="mk-item">
-                                <a href="tools/tool/smallTool/get-UA/" target="_blank">
-                                    <article class="mk-color-item color5">
-                                        <div class="item-logo">
-                                            <i class="fa fa-user" aria-hidden="true"></i>
-                                        </div>
-                                        <h3>UA获取</h3>
-                                        <p>获取浏览器使用的用户代理</p>
-                                        <i class="light"></i>
-                                    </article>
-                                </a>
-                            </div> <!-- mk-item -->
-
-
-                        </div> <!-- mk-item-box -->
-                    </section>
-                </div>
-            </div>
-
-            <div class="d-none w-100" id="div_option_2">
-                <div class="container">
-                    <section class="section">
-                        <a name="product"></a>
-
-                        <h3 class="mk-sub-title">
-                            <span>Tools</span>
-                            <span>/</span>
-                            文本相关
-                        </h3>
-                        <p class="mk-title-describe">与文本相关的工具</p>
-                        <div class="mk-item-box" style="width:100%">
-
-                            <div class="mk-item">
-                                <a href="tools/tool/text/emoji" target="_blank">
-                                    <article class="mk-color-item color1">
-                                        <div class="item-logo">
-                                            <i class="fas fa-grin-tongue-wink" aria-hidden="true"></i>
-                                        </div>
-                                        <h3>Emoji 大全</h3>
-                                        <p>非常全面的 Emoji 合集</p>
-                                        <i class="light"></i>
-                                    </article>
-                                </a>
-                            </div> <!-- mk-item -->
-
-                            <div class="mk-item">
-                                <a href="tools/tool/text/text-encoder" target="_blank">
-                                    <article class="mk-color-item color5">
-                                        <div class="item-logo">
-                                            <i class="fas fa-text-height" aria-hidden="true"></i>
-                                        </div>
-                                        <h3>编码解码</h3>
-                                        <p>文本编码解码工具合集</p>
-                                        <i class="light"></i>
-                                    </article>
-                                </a>
-                            </div> <!-- mk-item -->
-
-
-                            <div class="mk-item">
-                                <a href="tools/tool/text/qrcode" target="_blank">
-                                    <article class="mk-color-item color3">
-                                        <div class="item-logo">
-                                            <i class="fas fa-qrcode" aria-hidden="true"></i>
-                                        </div>
-                                        <h3>二维码生成</h3>
-                                        <p>根据文本生成二维码</p>
-                                        <i class="light"></i>
-                                    </article>
-                                </a>
-                            </div> <!-- mk-item -->
-
-                            <div class="mk-item">
-                                <a href="tools/tool/text/runcode" target="_blank">
-                                    <article class="mk-color-item color6">
-                                        <div class="item-logo">
-                                            <i class="fas fa-file-signature" aria-hidden="true"></i>
-                                        </div>
-                                        <h3>在线html</h3>
-                                        <p>实时html编写工具</p>
-                                        <i class="light"></i>
-                                    </article>
-                                </a>
-                            </div> <!-- mk-item -->
-
-                            <div class="mk-item">
-                                <a href="tools/tool/text/markdown" target="_blank">
-                                    <article class="mk-color-item color2">
-                                        <div class="item-logo">
-                                            <i class="fas fa-feather-alt" aria-hidden="true"></i>
-                                        </div>
-                                        <h3>Markdown</h3>
-                                        <p>Markdown编写工具</p>
-                                        <i class="light"></i>
-                                    </article>
-                                </a>
-                            </div> <!-- mk-item -->
-
-                            <div class="mk-item">
-                                <a href="tools/tool/text/totp-generator" target="_blank">
-                                    <article class="mk-color-item color1">
-                                        <div class="item-logo">
-                                            <i class="fas fa-id-badge" aria-hidden="true"></i>
-                                        </div>
-                                        <h3>TOTP</h3>
-                                        <p>在线TOTP解码工具</p>
-                                        <i class="light"></i>
-                                    </article>
-                                </a>
-                            </div> <!-- mk-item -->
-
-                        </div> <!-- mk-item-box -->
-                    </section>
-                </div>
-            </div>
-
-            <div class="d-none w-100" id="div_option_3">
-                <div class="container">
-                    <section class="section">
-                        <a name="product"></a>
-
-                        <h3 class="mk-sub-title">
-                            <span>Tools</span>
-                            <span>/</span>
-                            文件处理
-                        </h3>
-                        <p class="mk-title-describe">加载读取各类文件</p>
-                        <div class="mk-item-box" style="width:100%">
-                            <div class="mk-item">
-                                <a href="tools/tool/file/unlock-music" target="_blank">
-                                    <article class="mk-color-item color4">
-                                        <div class="item-logo">
-                                            <i class="fas fa-compact-disc" aria-hidden="true"></i>
-                                        </div>
-                                        <h3>音乐解锁</h3>
-                                        <p>解锁平台专属音乐</p>
-                                        <i class="light"></i>
-                                    </article>
-                                </a>
-                            </div> <!-- mk-item -->
-
-
-                            <div class="mk-item">
-                                <a href="tools/tool/file/QR-code-decoder" target="_blank">
-                                    <article class="mk-color-item color1">
-                                        <div class="item-logo">
-                                            <i class="fas fa-qrcode" aria-hidden="true"></i>
-                                        </div>
-                                        <h3>二维码识别</h3>
-                                        <p>将二维码识别为文本</p>
-                                        <i class="light"></i>
-                                    </article>
-                                </a>
-                            </div> <!-- mk-item -->
-
-                            <div class="mk-item">
-                                <a href="tools/tool/file/compress-img" target="_blank">
-                                    <article class="mk-color-item color6">
-                                        <div class="item-logo">
-                                            <i class="fas fa-compress-alt" aria-hidden="true"></i>
-                                        </div>
-                                        <h3>图片压缩</h3>
-                                        <p>在线图片压缩工具</p>
-                                        <i class="light"></i>
-                                    </article>
-                                </a>
-                            </div> <!-- mk-item -->
-
-                        </div> <!-- mk-item-box -->
-                    </section>
-                </div>
-            </div>
-
-            <div class="d-none w-100" id="div_option_4">
-                <div class="container">
-                    <section class="section">
-                        <a name="product"></a>
-
-                        <h3 class="mk-sub-title">
-                            <span>Games</span>
-                            <span>/</span>
-                            游戏
-                        </h3>
-                        <p class="mk-title-describe">多种在线小游戏</p>
-                        <div class="mk-item-box" style="width:100%">
-                            <div class="mk-item">
-                                <a href="tools/game/2048" target="_blank">
-                                    <article class="mk-color-item color4">
-                                        <div class="item-logo">
-                                            <i class="fas fa-dice-four" aria-hidden="true"></i>
-                                        </div>
-                                        <h3>2048</h3>
-                                        <p>经典烧脑益智小游戏</p>
-                                        <i class="light"></i>
-                                    </article>
-                                </a>
-                            </div> <!-- mk-item -->
-
-
-                            <div class="mk-item">
-                                <a href="tools/game/chess" target="_blank">
-                                    <article class="mk-color-item color1">
-                                        <div class="item-logo">
-                                            <i class="fas fa-chess-queen" aria-hidden="true"></i>
-                                        </div>
-                                        <h3>国际象棋</h3>
-                                        <p>来和AI下一盘象棋</p>
-                                        <i class="light"></i>
-                                    </article>
-                                </a>
-                            </div> <!-- mk-item -->
-
-                            <div class="mk-item">
-                                <a href="tools/game/liferestart" target="_blank">
-                                    <article class="mk-color-item color6">
-                                        <div class="item-logo">
-                                            <i class="fas fa-heart" aria-hidden="true"></i>
-                                        </div>
-                                        <h3>重开模拟器</h3>
-                                        <p>你的人生由自己决定</p>
-                                        <i class="light"></i>
-                                    </article>
-                                </a>
-                            </div> <!-- mk-item -->
-
-                            <div class="mk-item">
-                                <a href="tools/game/tetris" target="_blank">
-                                    <article class="mk-color-item color3">
-                                        <div class="item-logo">
-                                            <i class="fas fa-cubes" aria-hidden="true"></i>
-                                        </div>
-                                        <h3>俄罗斯方块</h3>
-                                        <p>来挑战最高分</p>
-                                        <i class="light"></i>
-                                    </article>
-                                </a>
-                            </div> <!-- mk-item -->
-
-                            <div class="mk-item">
-                                <a href="tools/game/adarkroom" target="_blank">
-                                    <article class="mk-color-item color2">
-                                        <div class="item-logo">
-                                            <i class="fas fa-fire" aria-hidden="true"></i>
-                                        </div>
-                                        <h3>小黑屋</h3>
-                                        <p>经典文字冒险游戏</p>
-                                        <i class="light"></i>
-                                    </article>
-                                </a>
-                            </div> <!-- mk-item -->
-
-                            <div class="mk-item">
-                                <a href="tools/game/cuber" target="_blank">
-                                    <article class="mk-color-item color3">
-                                        <div class="item-logo">
-                                            <i class="fas fa-cube" aria-hidden="true"></i>
-                                        </div>
-                                        <h3>魔方</h3>
-                                        <p>在线魔方 不服来战</p>
-                                        <i class="light"></i>
-                                    </article>
-                                </a>
-                            </div> <!-- mk-item -->
-
-                        </div> <!-- mk-item-box -->
-                    </section>
-                </div>
-            </div>
-
-            <div class="d-none w-100" id="div_option_5">
-                <div class="container">
-                    <section class="section">
-                        <a name="product"></a>
-
-                        <h3 class="mk-sub-title">
-                            <span>Games</span>
-                            <span>/</span>
-                            游戏
-                        </h3>
-                        <p class="mk-title-describe">在线游戏工具</p>
-                        <div class="mk-item-box" style="width:100%">
-
-                            <div class="mk-item">
-                                <a href="tools/game/savegame-editors" target="_blank">
-                                    <article class="mk-color-item color3">
-                                        <div class="item-logo">
-                                            <i class="fas fa-edit" aria-hidden="true"></i>
-                                        </div>
-                                        <h3>存档修改器</h3>
-                                        <p>多种游戏存档的在线修改器</p>
-                                        <i class="light"></i>
-                                    </article>
-                                </a>
-                            </div> <!-- mk-item -->
-                        </div> <!-- mk-item-box -->
-                    </section>
-                </div>
-            </div>
-
-            <div class="d-none w-100" id="div_option_6">
-                <div class="container">
-                    <section class="section">
-                        <a name="product"></a>
-
-                        <h3 class="mk-sub-title">
-                            <span>More</span>
-                            <span>/</span>
-                            其它
-                        </h3>
-                        <p class="mk-title-describe">杂七杂八</p>
-                        <div class="mk-item-box" style="width:100%">
-                            <div class="mk-item">
-                                <a href="tools/more/durms" target="_blank">
-                                    <article class="mk-color-item color2">
-                                        <div class="item-logo">
-                                            <i class="fas fa-volume-up" aria-hidden="true"></i>
-                                        </div>
-                                        <h3>架子鼓</h3>
-                                        <p>在线演奏一场音乐吧</p>
-                                        <i class="light"></i>
-                                    </article>
-                                </a>
-                            </div> <!-- mk-item -->
-
-                            <div class="mk-item">
-                                <a href="tools/more/bullshit" target="_blank">
-                                    <article class="mk-color-item color6">
-                                        <div class="item-logo">
-                                            <i class="fas fa-poo" aria-hidden="true"></i>
-                                        </div>
-                                        <h3>狗屁不通生成器</h3>
-                                        <p>你写的这是什么玩意</p>
-                                        <i class="light"></i>
-                                    </article>
-                                </a>
-                            </div> <!-- mk-item -->
-
-
-                            <div class="mk-item">
-                                <a href="tools/more/hacker" target="_blank">
-                                    <article class="mk-color-item color3">
-                                        <div class="item-logo">
-                                            <i class="fas fa-rss-square" aria-hidden="true"></i>
-                                        </div>
-                                        <h3>Hacker</h3>
-                                        <p>你的电脑被黑了</p>
-                                        <i class="light"></i>
-                                    </article>
-                                </a>
-                            </div> <!-- mk-item -->
-
-                            <div class="mk-item">
-                                <a href="tools/more/vsbm" target="_blank">
-                                    <article class="mk-color-item color4">
-                                        <div class="item-logo">
-                                            <i class="fas fa-bug" aria-hidden="true"></i>
-                                        </div>
-                                        <h3>毒蘑菇测试</h3>
-                                        <p>测测你的显卡性能</p>
-                                        <i class="light"></i>
-                                    </article>
-                                </a>
-                            </div> <!-- mk-item -->
-
-                        </div> <!-- mk-item-box -->
-                    </section>
-                </div>
-            </div>
-
-
-
-            <div class="d-none" id="div_option_6"></div>
-
-            <div class="d-none" id="div_option_7"></div>
-
-            <div class="d-none" id="div_option_8"></div>
-        </div>
+      </div>
+      <!-- GitHub 页脚 -->
+      <div class="home-footer">
+        <a href="https://github.com/Sourcefuture/WebTools" target="_blank">
+          <i data-lucide="github" class="footer-icon"></i>
+          项目 GitHub
+        </a>
+      </div>
 
     </div>
+
+    <div id="div_option_1" class="content-section">
+
+      <div class="section-title">
+        <div class="section-en">🧰 Tools / 小工具</div>
+        <div class="section-desc">各种稀奇古怪的功能</div>
+      </div>
+
+      <div class="tools-container">
+        <div class="tool-card" onclick="window.open('tools/tool/smallTool/screentest', '_blank')">
+          <i data-lucide="monitor" class="tool-icon"></i>
+          <div class="tool-title">屏幕测试</div>
+          <div class="tool-desc">你的屏幕是否有缺陷呢</div>
+        </div>
+
+        <div class="tool-card" onclick="window.open('tools/tool/smallTool/color', '_blank')">
+          <i data-lucide="droplet" class="tool-icon"></i>
+          <div class="tool-title">html颜色代码</div>
+          <div class="tool-desc">在线转换RGB代码</div>
+        </div>
+
+        <div class="tool-card" onclick="window.open('tools/tool/smallTool/logoly', '_blank')">
+          <i data-lucide="home" class="tool-icon"></i>
+          <div class="tool-title">Logo生成</div>
+          <div class="tool-desc">好看的LOGO生成器</div>
+        </div>
+
+        <div class="tool-card" onclick="window.open('tools/tool/smallTool/whiteboard', '_blank')">
+          <i data-lucide="edit" class="tool-icon"></i>
+          <div class="tool-title">在线画板</div>
+          <div class="tool-desc">一个前端简易画板工具</div>
+        </div>
+
+        <div class="tool-card" onclick="window.open('tools/tool/smallTool/get-UA/', '_blank')">
+          <i data-lucide="user" class="tool-icon"></i>
+          <div class="tool-title">UA获取</div>
+          <div class="tool-desc">获取浏览器使用的用户代理</div>
+        </div>
+
+        <div class="tool-card" onclick="window.open('tools/tool/file/unlock-music', '_blank')">
+          <i data-lucide="music" class="tool-icon"></i>
+          <div class="tool-title">音乐解锁</div>
+          <div class="tool-desc">解锁平台专属音乐</div>
+        </div>
+
+        <div class="tool-card" onclick="window.open('tools/tool/file/QR-code-decoder', '_blank')">
+          <i data-lucide="scan-qr-code" class="tool-icon"></i>
+          <div class="tool-title">二维码识别</div>
+          <div class="tool-desc">将二维码识别为文本</div>
+        </div>
+
+        <div class="tool-card" onclick="window.open('tools/tool/file/compress-img', '_blank')">
+          <i data-lucide="image" class="tool-icon"></i>
+          <div class="tool-title">图片压缩</div>
+          <div class="tool-desc">在线图片压缩工具</div>
+        </div>
+      </div>
+
+
+      <div class="section-title">
+        <div class="section-en">🔤 Tools / 文本处理</div>
+        <div class="section-desc">与文本相关的工具</div>
+      </div>
+      <div class="tools-container">
+        <div class="tool-card" onclick="window.open('tools/tool/text/emoji', '_blank')">
+          <i data-lucide="smile" class="tool-icon"></i>
+          <div class="tool-title">Emoji 大全</div>
+          <div class="tool-desc">非常全面的 Emoji 合集</div>
+        </div>
+
+        <div class="tool-card" onclick="window.open('tools/tool/text/text-encoder', '_blank')">
+          <i data-lucide="type" class="tool-icon"></i>
+          <div class="tool-title">编码解码</div>
+          <div class="tool-desc">文本编码解码工具合集</div>
+        </div>
+
+        <div class="tool-card" onclick="window.open('tools/tool/text/qrcode', '_blank')">
+          <i data-lucide="qr-code" class="tool-icon"></i>
+          <div class="tool-title">二维码生成</div>
+          <div class="tool-desc">根据文本生成二维码</div>
+        </div>
+
+        <div class="tool-card" onclick="window.open('tools/tool/text/runcode', '_blank')">
+          <i data-lucide="code" class="tool-icon"></i>
+          <div class="tool-title">在线html</div>
+          <div class="tool-desc">实时html编写工具</div>
+        </div>
+
+        <div class="tool-card" onclick="window.open('tools/tool/text/markdown', '_blank')">
+          <i data-lucide="feather" class="tool-icon"></i>
+          <div class="tool-title">Markdown</div>
+          <div class="tool-desc">Markdown编写工具</div>
+        </div>
+
+        <div class="tool-card" onclick="window.open('tools/tool/text/totp-generator', '_blank')">
+          <i data-lucide="credit-card" class="tool-icon"></i>
+          <div class="tool-title">TOTP</div>
+          <div class="tool-desc">在线TOTP解码工具</div>
+        </div>
+      </div>
     </div>
-    <script src="js/jquery-3.4.1.min.js"></script>
-    <script src="bootstrap/js/bootstrap.bundle.js"></script>
-    <script src="js/bottom.js"></script>
-    <script src="js/script.js"></script>
+
+    <div id="div_option_2" class="content-section">
+      <div class="section-title">
+        <div class="section-en">🎮 Games / 在线游戏</div>
+        <div class="section-desc">多种在线小游戏</div>
+      </div>
+      <div class="tools-container">
+        <div class="tool-card" onclick="window.open('tools/game/2048', '_blank')">
+          <i data-lucide="grid" class="tool-icon"></i>
+          <div class="tool-title">2048</div>
+          <div class="tool-desc">经典烧脑益智小游戏</div>
+        </div>
+
+        <div class="tool-card" onclick="window.open('tools/game/chess', '_blank')">
+          <i data-lucide="swords" class="tool-icon"></i>
+          <div class="tool-title">国际象棋</div>
+          <div class="tool-desc">来和AI下一盘象棋</div>
+        </div>
+
+        <div class="tool-card" onclick="window.open('tools/game/liferestart', '_blank')">
+          <i data-lucide="heart" class="tool-icon"></i>
+          <div class="tool-title">重开模拟器</div>
+          <div class="tool-desc">你的人生由自己决定</div>
+        </div>
+
+        <div class="tool-card" onclick="window.open('tools/game/tetris', '_blank')">
+          <i data-lucide="layers" class="tool-icon"></i>
+          <div class="tool-title">俄罗斯方块</div>
+          <div class="tool-desc">来挑战最高分</div>
+        </div>
+
+        <div class="tool-card" onclick="window.open('tools/game/adarkroom', '_blank')">
+          <i data-lucide="house" class="tool-icon"></i>
+          <div class="tool-title">小黑屋</div>
+          <div class="tool-desc">经典文字冒险游戏</div>
+        </div>
+
+        <div class="tool-card" onclick="window.open('tools/game/cuber', '_blank')">
+          <i data-lucide="boxes" class="tool-icon"></i>
+          <div class="tool-title">魔方</div>
+          <div class="tool-desc">在线魔方 不服来战</div>
+        </div>
+
+      </div>
+
+
+      <div class="section-title">
+        <div class="section-en">🎮 Games / 游戏工具</div>
+        <div class="section-desc">在线游戏工具</div>
+      </div>
+      <div class="tools-container">
+        <div class="tool-card" onclick="window.open('tools/game/savegame-editors', '_blank')">
+          <i data-lucide="edit" class="tool-icon"></i>
+          <div class="tool-title">存档修改器</div>
+          <div class="tool-desc">多种游戏存档的在线修改器</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div id="div_option_3" class="content-section">
+      <div class="section-title">
+        <div class="section-en">🗞️ More / 其它</div>
+        <div class="section-desc">杂七杂八</div>
+      </div>
+
+      <div class="tools-container">
+        <div class="tool-card" onclick="window.open('tools/more/durms', '_blank')">
+          <i data-lucide="volume-2" class="tool-icon"></i>
+          <div class="tool-title">架子鼓</div>
+          <div class="tool-desc">在线演奏一场音乐吧</div>
+        </div>
+
+        <div class="tool-card" onclick="window.open('tools/more/bullshit', '_blank')">
+          <i data-lucide="alert-circle" class="tool-icon"></i>
+          <div class="tool-title">狗屁不通生成器</div>
+          <div class="tool-desc">你写的这是什么玩意</div>
+        </div>
+
+        <div class="tool-card" onclick="window.open('tools/more/hacker', '_blank')">
+          <i data-lucide="rss" class="tool-icon"></i>
+          <div class="tool-title">Hacker</div>
+          <div class="tool-desc">你的电脑被黑了</div>
+        </div>
+
+        <div class="tool-card" onclick="window.open('tools/more/vsbm', '_blank')">
+          <i data-lucide="cpu" class="tool-icon"></i>
+          <div class="tool-title">毒蘑菇测试</div>
+          <div class="tool-desc">测测你的显卡性能</div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- About 弹窗 -->
+    <div class="modal-overlay" id="aboutModal">
+      <div class="modal">
+        <h3>关于 Source 百宝箱</h3>
+        <p>本网站由 Source 开发，用于集中展示与管理日常工具与资源。</p>
+        <p>此「 工具箱 」中的大部分作品是开源的，即使没有开源，您也可以通过查看源代码以进行查阅。
+          请注意，开源不代表可以滥用，转载或使用这些源代码时，请务必保留原始的版权信息！
+          这是一个程序员最基本的修养，也是对原作者最起码的尊重。</p>
+        <button id="closeModal">关闭</button>
+      </div>
+    </div>
+
+    <script src="./assets/js/script.js"></script>
 </body>
 
 </html>
